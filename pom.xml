@@ -34,6 +34,8 @@
     <packaging>pom</packaging>
 
     <properties>
+            <maven.test.skip>true</maven.test.skip>
+
         <isis.version>1.16.2</isis.version>
 
         <lombok.version>1.16.18</lombok.version>
