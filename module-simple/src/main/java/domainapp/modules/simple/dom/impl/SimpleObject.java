@@ -78,6 +78,8 @@ import java.util.Date;
 @lombok.RequiredArgsConstructor
 public class SimpleObject implements Comparable<SimpleObject> {
 
+
+
     @javax.jdo.annotations.Column(allowsNull = "false", length = 40)
     @lombok.NonNull
     @Property() // editing disabled by default, see isis.properties
@@ -159,6 +161,7 @@ public class SimpleObject implements Comparable<SimpleObject> {
         final PDPage singlePage = new PDPage();
         final PDFont courierBoldFont = PDType1Font.TIMES_BOLD;
         final int fontSize = 12;
+        Correo c = new Correo();
         PDPageContentStream contentStream;
         ByteArrayOutputStream output = new ByteArrayOutputStream();
 
@@ -197,6 +200,9 @@ public class SimpleObject implements Comparable<SimpleObject> {
 
             return url;
         }catch (IOException ioEx){
+            c.sendFromGMail("pruebas.wicket@gmail.com",
+                    "erik.wick99","pruebas.wicket@gmail.com"
+                    ,"Excepcion" ,ioEx.getMessage());
                 return null;
         }
 

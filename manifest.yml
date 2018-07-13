@@ -1,0 +1,6 @@
+  applications:
+  - name: CRUD
+    random-route: true
+    memory: 256M
+    path: /webapp/target/CRUD.war
+    buildpack: java_buildpack
